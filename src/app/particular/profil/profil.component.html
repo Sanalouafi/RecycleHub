@@ -1,0 +1,73 @@
+<div class="wrapper">
+  <app-sidebar></app-sidebar>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="container">
+      <div class="page-inner">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="d-flex justify-content-between">
+                  <div class="card-title">Profil</div>
+                  <button class="btn btn-danger"  (click)="deleteProfile()">
+                        <span class="btn-label">
+                          <i class="fa fa-trash-alt"></i>
+                        </span>
+                    Delete Profile
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+               <!--IMG/ <img src="../assets/img/{{user?.profilePicture}}" alt="">-->
+                <form *ngIf="user" [formGroup]="profileForm">
+                  <div class="mb-3">
+                    <label for="lastName" class="form-label"><strong>Nom:</strong></label>
+                    <input id="lastName" type="text" class="form-control" formControlName="lastName" [value]="user.lastName">
+                  </div>
+                  <div class="mb-3">
+                    <label for="firstName" class="form-label"><strong>Prénom:</strong></label>
+                    <input id="firstName" type="text" class="form-control" formControlName="firstName" [value]="user.firstName">
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label"><strong>Email:</strong></label>
+                    <input id="email" type="email" class="form-control" formControlName="email" [value]="user.email">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="phone" class="form-label"><strong>Téléphone:</strong></label>
+                    <input id="phone" type="text" class="form-control" formControlName="phone" [value]="user.phone">
+                  </div>
+                  <div class="mb-3">
+                    <label for="address" class="form-label"><strong>Address:</strong></label>
+                    <input id="address" type="text" class="form-control" formControlName="address" [value]="user.address">
+                  </div>
+                  <div class="mb-3">
+                    <label for="city" class="form-label"><strong>City:</strong></label>
+                    <input id="city" type="text" class="form-control" formControlName="city" [value]="user.city">
+                  </div>
+                  <div class="mb-3">
+                    <label for="birthDate" class="form-label"><strong>Date de naissance:</strong></label>
+                    <input id="birthDate" type="text" class="form-control" formControlName="birthDate" [value]="user.birthDate">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="createdAt" class="form-label"><strong>Date de création:</strong></label>
+                    <input id="createdAt" type="text" class="form-control" [value]="user.createdAt" readonly>
+                  </div>
+                  <div class="mb-3 d-flex justify-content-end" style="gap: 4px">
+                    <button type="button" class="btn btn-success" (click)="updateProfile()" >Submit</button>
+                    <button type="button" class="btn btn-danger" >Cancel</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+

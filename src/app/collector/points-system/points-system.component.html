@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <app-sidebar></app-sidebar>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="container">
+      <div class="page-inner">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="d-flex justify-content-between">
+                  <div class="card-title">Points System</div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                      <th>User</th>
+                      <th>Address</th>
+                      <th>City</th>
+                      <th>collection Date</th>
+                      <th>Items & quantity</th>
+                      <th>Points</th>
+                      <th>Voucher</th>
+                      <th>Remaining Points  </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let collectionRequest of collectionRequests$ | async">
+                      <td>{{ collectionRequest.user?.lastName }} {{ collectionRequest.user?.firstName }}</td>
+                      <td>{{ collectionRequest.address }}</td>
+                      <td>{{ collectionRequest.city }}</td>
+                      <td>{{ collectionRequest.collectionDate }}</td>
+                      <td>
+                        <span *ngFor="let item of collectionRequest.items; let last = last">
+                          {{ item.wasteType }} ({{ item.weight }}kg){{ last ? '' : ', ' }}
+                        </span>
+                      </td>
+                      <td>{{ collectionRequest.points }}</td>
+                      <td>{{ collectionRequest.voucher }} dh</td>
+                      <td>{{ collectionRequest.remainingPoints }}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+

@@ -1,0 +1,87 @@
+<div class="sidebar" style="background: linear-gradient(135deg, #f06, #48f);">
+  <div class="sidebar-logo">
+    <!-- Logo Header -->
+    <div class="logo-header" style="background: linear-gradient(135deg, #f06, #48f);">
+      <a href="../index.html" class="logo">
+        <img
+          src="../assets/img/logo2.png"
+          style="color: #0a53be"
+          alt="navbar brand"
+          class="navbar-brand"
+          height="35"
+        />
+        <span class="ms-1 text-sm text-white"><strong>Recycle</strong>Hub</span>
+      </a>
+      <div class="nav-toggle">
+        <button class="btn btn-toggle toggle-sidebar">
+          <i class="gg-menu-right" style="color: #ffffff;"></i>
+        </button>
+        <button class="btn btn-toggle sidenav-toggler">
+          <i class="gg-menu-left" style="color: #ffffff;"></i>
+        </button>
+      </div>
+      <button class="topbar-toggler more">
+        <i class="gg-more-vertical-alt" style="color: #ffffff;"></i>
+      </button>
+    </div>
+    <!-- End Logo Header -->
+  </div>
+  <div class="sidebar-wrapper scrollbar scrollbar-inner">
+    <div class="sidebar-content">
+      <ul class="nav nav-secondary">
+        <li class="nav-item">
+          <a
+            data-bs-toggle="collapse"
+            href="#dashboard"
+            class="collapsed"
+            aria-expanded="false"
+          >
+            <i class="fas fa-home" style="color: #ffffff;"></i>
+            <p class="text-white">Dashboard</p>
+          </a>
+        </li>
+
+        <li class="nav-item submenu" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a data-bs-toggle="collapse" href="#tables">
+            <i class="fas fa-table" style="color: #ffffff;"></i>
+            <p class="text-white">Tables</p>
+            <span class="caret" style="color: #ffffff;"></span>
+          </a>
+          <div class="collapse show" id="tables">
+            <ul class="nav nav-collapse">
+              <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a routerLink="/demande" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                  <span class="sub-item text-white">Collections</span>
+                </a>
+              </li>
+              <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isCollector">
+                <a routerLink="/request-list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                  <span class="sub-item text-white">Validate Request</span>
+                </a>
+              </li>
+
+              <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isCollector">
+                <a routerLink="/system-points" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                  <span class="sub-item text-white">Points System</span>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a
+            routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            routerLink="/profil"
+            class="collapsed"
+            aria-expanded="false"
+          >
+            <i class="fas fa-user-cog" style="color: #ffffff;"></i>
+            <p class="text-white">Profil</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

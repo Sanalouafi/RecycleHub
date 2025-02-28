@@ -1,0 +1,106 @@
+<div *ngIf="openPopup" class="modal fade show d-block" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Manage Collection</h5>
+        <button type="button" class="close" (click)="cancel()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="max-height: 400px; overflow-y: auto; ">
+        <form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="address">Adresse :</label><span class="required-indicator">*</span>
+            <input id="address" type="text" class="form-control" formControlName="address" required />
+            <div *ngIf="requestForm.controls['address'].invalid && requestForm.controls['address'].touched" class="text-danger">
+              L'adresse est requise.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="city">Ville :</label><span class="required-indicator">*</span>
+            <input id="city" type="text" class="form-control" formControlName="city" required />
+            <div *ngIf="requestForm.controls['city'].invalid && requestForm.controls['city'].touched" class="text-danger">
+              La ville est requise.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="collectionDate">Date de collecte :</label><span class="required-indicator">*</span>
+            <input id="collectionDate" type="date" class="form-control"
+                   formControlName="collectionDate"
+                   [min]="today"
+                   required />
+            <div *ngIf="requestForm.controls['collectionDate'].hasError('min') && requestForm.controls['collectionDate'].touched"
+                 class="text-danger">
+              La date ne peut pas être dans le passé.
+            </div>
+            <div *ngIf="requestForm.controls['collectionDate'].hasError('required') && requestForm.controls['collectionDate'].touched"
+                 class="text-danger">
+              La date est requise.
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="timeSlot">Créneau horaire :</label><span class="required-indicator">*</span>
+            <input id="timeSlot" type="time" class="form-control" formControlName="timeSlot" required />
+            <div *ngIf="requestForm.get('timeSlot')?.hasError('invalidTimeSlot') && requestForm.get('timeSlot')?.touched" class="text-danger">
+              Le créneau doit être entre 09h00 et 18h00.
+            </div>
+          </div>
+
+          <div class="form-group" hidden="hidden">
+            <label for="status">Statut :</label><span class="required-indicator">*</span>
+            <select id="status" class="form-control" formControlName="status">
+              <option *ngFor="let status of collectionStatusArray" [value]="status">{{ status }}</option>
+            </select>
+          </div>
+          <button type="button" (click)="addItem()" class="btn btn-secondary" style="margin-left: 10px">
+            Ajouter un item
+          </button>
+          <div formArrayName="items">
+            <div
+              *ngFor="let item of items.controls; let i = index"
+              [formGroupName]="i"
+              class="form-group row"
+            >
+              <div class="col-md-6">
+              <label for="wasteType">Type de déchet :</label><span class="required-indicator">*</span>
+              <select id="wasteType" class="form-control" formControlName="wasteType" required>
+                <option *ngFor="let type of itemTypes" [value]="type">
+                  {{ type }}
+                </option>
+              </select>
+              </div>
+              <div class="col-md-6">
+              <label for="weight">Poids (kg) :</label><span class="required-indicator">*</span>
+              <input id="weight" type="number" class="form-control" formControlName="weight" required />
+                <div *ngIf="items.controls[i].get('weight')?.hasError('min')" class="text-danger">
+                  Chaque élément doit peser au moins 1 kg.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Poids total : <strong>{{ getTotalWeight() }} kg</strong></label>
+            <div *ngIf="requestForm.get('items')?.hasError('maxWeightExceeded')" class="text-danger">
+              Le poids total ne doit pas dépasser 10 kg.
+            </div>
+          </div>
+
+          <!-- Bouton pour ajouter un nouvel item -->
+          <div class="form-group">
+            <label for="additionalNotes">Notes supplémentaires :</label>
+            <textarea id="additionalNotes" class="form-control" formControlName="additionalNotes"></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="cancel()">Close</button>
+            <button type="submit" class="btn btn-primary" >Save Collection</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

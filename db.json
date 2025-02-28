@@ -1,0 +1,278 @@
+{
+  "users": [
+    {
+      "id": "3cb6",
+      "firstName": "Randall",
+      "lastName": "Small",
+      "email": "mowu@mailinator.com",
+      "password": "mowu@mailinator.com",
+      "address": "Incidunt inventore ",
+      "city": "Marrakech",
+      "phone": "+1 (414) 478-5409",
+      "birthDate": "1978-07-15",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-04",
+      "profilePicture": "1737378429576.jpg"
+    },
+    {
+      "id": "be7e",
+      "firstName": "Jescie",
+      "lastName": "Lamb",
+      "email": "wecuq@mailinator.com",
+      "password": "wecuq@mailinator.com",
+      "address": "Eos officia et nostr",
+      "city": "ouarzazate",
+      "phone": "+1 (782) 445-3656",
+      "birthDate": "2019-05-02",
+      "role": "COLLECTOR",
+      "createdAt": "2025-02-04",
+      "profilePicture": "1737378429576.jpg"
+    },
+    {
+      "lastName": "chakir",
+      "firstName": "Hop",
+      "email": "sykomiho@mailinator.com",
+      "phone": "0651867166",
+      "address": "Douar Algouz Iznaguen",
+      "city": "ouarzazate",
+      "birthDate": "2019-06-25",
+      "id": "6ba1"
+    },
+    {
+      "id": "24d0",
+      "firstName": "Odessa",
+      "lastName": "Powers",
+      "email": "cicadi@mailinator.com",
+      "password": "cicadi@mailinator.com",
+      "address": "ouarzazate",
+      "city": "ouarzazate",
+      "phone": "+1 (183) 617-1078",
+      "birthDate": "1972-05-26",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-08",
+      "profilePicture": null
+    },
+    {
+      "id": "f45c",
+      "firstName": "Samantha",
+      "lastName": "Marshall",
+      "email": "dylipakum@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "address": "",
+      "city": "",
+      "phone": "+1 (918) 779-6435",
+      "birthDate": "2011-07-04",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-27",
+      "profilePicture": "330525.jpg"
+    }
+  ],
+  "collectionRequests": [
+    {
+      "id": "1590",
+      "user": {
+        "lastName": "chakir",
+        "firstName": "Hop",
+        "email": "sykomiho@mailinator.com",
+        "phone": "0651867166",
+        "address": "Douar Algouz Iznaguen",
+        "city": "ouarzazate",
+        "birthDate": "2019-06-25",
+        "id": "6ba1"
+      },
+      "estimatedWeight": 95,
+      "address": "Earum quibusdam sint",
+      "city": "Nemo iure necessitat",
+      "collectionDate": "2013-06-28",
+      "timeSlot": "Commodi quidem paria",
+      "status": "OCCUPIED",
+      "additionalNotes": "Tempore quasi ut ha",
+      "items": [
+        {
+          "wasteType": "PLASTIC",
+          "weight": 36
+        }
+      ]
+    },
+    {
+      "id": "52e4",
+      "user": {
+        "lastName": "chakir",
+        "firstName": "Hop",
+        "email": "sykomiho@mailinator.com",
+        "phone": "0651867166",
+        "address": "Douar Algouz Iznaguen",
+        "city": "ouarzazate",
+        "birthDate": "2019-06-25",
+        "id": "6ba1"
+      },
+      "estimatedWeight": 99,
+      "address": "Necessitatibus minus",
+      "city": "Velit ad tenetur al",
+      "collectionDate": "2024-12-18",
+      "timeSlot": "Velit harum reprehen",
+      "status": "VALIDATED",
+      "additionalNotes": "Quidem enim delectus",
+      "items": [
+        {
+          "wasteType": "PLASTIC",
+          "weight": 52
+        },
+        {
+          "wasteType": "PAPER",
+          "weight": 74
+        }
+      ],
+      "points": 78,
+      "voucher": 50
+    },
+    {
+      "id": "6b8e",
+      "user": {
+        "lastName": "chakir",
+        "firstName": "Hop",
+        "email": "sykomiho@mailinator.com",
+        "phone": "0651867166",
+        "address": "Douar Algouz Iznaguen",
+        "city": "ouarzazate",
+        "birthDate": "2019-06-25",
+        "id": "6ba1"
+      },
+      "estimatedWeight": 10,
+      "address": "Velit fuga Esse et",
+      "city": "Ab ullam quae autem ",
+      "collectionDate": "2004-07-07",
+      "timeSlot": "12:31",
+      "status": "PENDING",
+      "additionalNotes": "Aut modi id aute est",
+      "items": [
+        {
+          "wasteType": "PAPER",
+          "weight": 8
+        },
+        {
+          "wasteType": "PLASTIC",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "5294",
+      "user": {
+        "id": "24d0",
+        "firstName": "Odessa",
+        "lastName": "Powers",
+        "email": "cicadi@mailinator.com",
+        "password": "cicadi@mailinator.com",
+        "address": "ouarzazate",
+        "city": "Marrakech",
+        "phone": "+1 (183) 617-1078",
+        "birthDate": "1972-05-26",
+        "role": "PARTICULAR",
+        "createdAt": "2025-02-08",
+        "profilePicture": null
+      },
+      "estimatedWeight": 3,
+      "address": "Nostrum minim distin",
+      "city": "Assumenda sunt volup",
+      "collectionDate": "2025-02-08",
+      "timeSlot": "13:12",
+      "status": "PENDING",
+      "additionalNotes": "Perferendis tempor d",
+      "items": [
+        {
+          "wasteType": "PLASTIC",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "cbb1",
+      "user": {
+        "lastName": "chakir",
+        "firstName": "Hop",
+        "email": "sykomiho@mailinator.com",
+        "phone": "0651867166",
+        "address": "Douar Algouz Iznaguen",
+        "city": "ouarzazate",
+        "birthDate": "2019-06-25",
+        "id": "6ba1"
+      },
+      "estimatedWeight": 10,
+      "address": "Et perspiciatis eum",
+      "city": "Dolor irure cumque m",
+      "collectionDate": "2025-02-09",
+      "timeSlot": "10:35",
+      "status": "PENDING",
+      "additionalNotes": "Quo quia tempora lab",
+      "items": [
+        {
+          "wasteType": "GLASS",
+          "weight": 2
+        },
+        {
+          "wasteType": "METAL",
+          "weight": 8
+        }
+      ]
+    },
+    {
+      "id": "5d9d",
+      "user": {
+        "lastName": "chakir",
+        "firstName": "Hop",
+        "email": "sykomiho@mailinator.com",
+        "phone": "0651867166",
+        "address": "Douar Algouz Iznaguen",
+        "city": "ouarzazate",
+        "birthDate": "2019-06-25",
+        "id": "6ba1"
+      },
+      "estimatedWeight": 4,
+      "address": "Tempor architecto as",
+      "city": "Ut mollitia maxime e",
+      "collectionDate": "2025-02-09",
+      "timeSlot": "17:54",
+      "status": "PENDING",
+      "additionalNotes": "Consequuntur id sit",
+      "items": [
+        {
+          "wasteType": "PLASTIC",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "0c64",
+      "user": {
+        "id": "3cb6",
+        "firstName": "Randall",
+        "lastName": "Small",
+        "email": "mowu@mailinator.com",
+        "password": "mowu@mailinator.com",
+        "address": "Incidunt inventore ",
+        "city": "ouarzazate",
+        "phone": "+1 (414) 478-5409",
+        "birthDate": "1978-07-15",
+        "role": "PARTICULAR",
+        "createdAt": "2025-02-04",
+        "profilePicture": "1737378429576.jpg"
+      },
+      "estimatedWeight": 4,
+      "address": "Eos cupiditate id e",
+      "city": "Qui consequatur Con",
+      "collectionDate": "2025-02-09",
+      "timeSlot": "17:31",
+      "status": "PENDING",
+      "additionalNotes": "Occaecat dolorum ill",
+      "items": [
+        {
+          "wasteType": "GLASS",
+          "weight": 4
+        }
+      ]
+    }
+  ],
+  "pointsSystems": [],
+  "rewardRedemptions": []
+}

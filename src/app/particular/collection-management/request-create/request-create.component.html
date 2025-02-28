@@ -1,0 +1,82 @@
+<div class="wrapper">
+  <app-sidebar></app-sidebar>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="container">
+      <div class="page-inner">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="d-flex justify-content-between">
+                <div class="card-title">Collections Table</div>
+                <button class="btn btn-black"  (click)="showModal = true">
+                        <span class="btn-label">
+                          <i class="fa fa-plus"></i>
+                        </span>
+                  Add Collection
+                </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                      <th>User</th>
+                      <th>Address</th>
+                      <th>City</th>
+                      <th>collection Date</th>
+                      <th>timeSlot</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let collectionRequest of collectionRequests$ | async">
+                      <td>{{ collectionRequest.user?.firstName }} {{ collectionRequest.user?.lastName }}</td>
+                      <td>{{ collectionRequest.address }}</td>
+                      <td>{{ collectionRequest.city }}</td>
+                      <td>{{ collectionRequest.collectionDate }}</td>
+                      <td>{{ collectionRequest.timeSlot }}</td>
+                      <td>
+                          <span
+                            class="badge"
+                            [ngClass]="{
+                              'bg-warning text-white': collectionRequest.status === 'PENDING',
+                              'bg-primary text-white': collectionRequest.status === 'OCCUPIED',
+                              'bg-info text-white': collectionRequest.status === 'IN-PROGRESS',
+                              'bg-success text-white': collectionRequest.status === 'VALIDATED',
+                              'bg-danger text-white': collectionRequest.status === 'REJECTED'
+                            }">
+                            {{ collectionRequest.status }}
+                          </span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <button class="text-primary bg-body border-0" (click)="collectionRequest.id?editCollectionRequest(collectionRequest.id) : null">
+                          <i class="far fa-edit"></i>
+                        </button>
+                        <button class="text-danger bg-body border-0" (click)="collectionRequest.id?  deleteCollectionRequest(collectionRequest.id) : null">
+                          <i class="far fa-trash-alt"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<app-add-request
+  *ngIf="showModal"
+  [initialRequestData]="selectedCollectionRequest"
+  (openPopup)="openPopup()"
+  (closePopup)="closePopup()"
+></app-add-request>
+
